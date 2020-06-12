@@ -3,6 +3,11 @@ import { controller, get, bodyValidator, post } from "./decorators";
 
 @controller("/auth")
 export class LoginController {
+  // can only add @get() route binder decorator to func of type RequestHandler
+  add(a: number, b: number): number {
+    return a + b;
+  }
+
   @get("/login")
   getLogin(req: Request, res: Response): void {
     res.send(`
